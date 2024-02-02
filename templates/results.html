@@ -1,0 +1,68 @@
+{% extends 'wrapper.html' %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-3">
+                <table class="table">
+                
+                    <tbody>
+                      <tr>
+                  
+                        <td>Topshiruvchi:</td>
+                        <td> {{ result.user_info }} </td>
+                      </tr>
+
+                      <tr>
+                        <td> Yo'nalish:  </td>
+                        <td>  {{ result.category }} </td>
+                      </tr>
+
+                      <tr>
+                        <td> Savollar soni:  </td>
+                        <td>  {{ result.history.count }} ta </td>
+                      </tr>
+
+                      <tr>
+                        <td> To'gri javoblar:  </td>
+                        <td>  {{ result.success  }} ta </td>
+                      </tr>
+
+                      <tr>
+                        <td> Noto'gri javoblar:  </td>
+                        <td>  {{ result.fail  }} ta </td>
+                      </tr>
+
+                      <tr>
+                        <td> Jami ball:  </td>
+                        <td>  {{ result.score  }}  </td>
+                      </tr>
+
+
+                      <tr>
+                        <td> Test boshlandi:  </td>
+                        <td>  {{ result.start_date|date:"d-m-Y H:i:s"  }} </td>
+                      </tr>
+
+                      <tr>
+                        <td> Test yakunlandi:  </td>
+                        <td>  {{ result.end_date|date:"d-m-Y H:i:s"  }} </td>
+                      </tr>
+
+
+
+
+
+                    </tbody>
+                  </table>
+                  
+
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
+
+
+

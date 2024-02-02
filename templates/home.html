@@ -1,0 +1,44 @@
+{% extends 'wrapper.html' %}
+
+{% block content %}
+        <div class="container mt-5">
+            <div class="row">
+
+                <div class="col-md-2">
+                    <h1>Bo'limlar</h1>
+                    <ul class="list-group">
+                        <li class="list-group-item">Morbi leo risus</li>
+                        <li class="list-group-item">Porta ac consectetur ac</li>
+                        <li class="list-group-item">Vestibulum at eros</li>
+                      </ul>
+                      
+                </div>
+
+
+                <div class="col-md-10">
+                    <div class="row">
+
+                        {% for c in categories %}
+                        <div class="col-md-4">
+                            <div class="card text-center p-2">
+                                <br>
+                                <h3 class="text-info"> {{ c.title }}  </h3>
+                                <br>
+                                <br>
+                                <p><b>Vaqt: </b>  {{ c.duration }} </p>
+                                <p><b>Savollar soni: </b>  {{ c.quiz_count }} ta </p>
+                                <a href="/test/{{ c.id }}">Testni boshlash</a>
+                            </div>
+                        </div>
+                        {% empty %}
+                            <h1>Bo'limlar topilmadi !!! </h1>
+                        {% endfor  %}
+                        
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+{% endblock content %}
